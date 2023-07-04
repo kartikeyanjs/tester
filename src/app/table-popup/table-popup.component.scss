@@ -1,0 +1,32 @@
+@import "../variables";
+
+.ergo-popup {
+    .desk-height-wrapper {
+        @include flexCenter(initial, center);
+
+        .desk-wrapper,
+        .height-wrapper {
+            @include flexCenter(initial, center);
+        }
+    }
+    .ergo-check-wrapper {
+        @include flexCenter(initial, initial);
+        flex-direction: column;
+    }
+    .others-wrapper {
+        @include flexCenter(initial, baseline);
+    }
+    .btn-wrapper {
+        padding-top: 1em;
+        border-top: 1px solid #ddd;
+        margin-top: 0.5em;
+
+        .cancel-btn {
+            margin-right: 1em;
+        }
+        .save-btn {
+            background-color: $primaryColor;
+            color: $textLight;
+        }
+    } 
+}

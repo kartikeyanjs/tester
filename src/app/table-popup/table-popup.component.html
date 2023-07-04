@@ -1,0 +1,38 @@
+<div class="ergo-popup">
+    <h4 class="f-16 font-weight-normal mb-3">Ergo (Shishir Singhal)</h4>
+    <div class="desk-height-wrapper">
+        <div class="desk-wrapper mr-3">
+            <label class="mr-2 text-nowrap">Desk :</label>
+            <div class="select-wrapper mr-2 sm-mb-2">
+                <mat-form-field floatLabel="never">
+                    <mat-label>Select</mat-label>
+                    <mat-select container="body">
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="height-wrapper">
+            <label class="mr-2 text-nowrap">Height :</label>
+            <mat-form-field floatLabel="never">
+                <input matInput>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="ergo-check-wrapper">
+        <mat-checkbox class="mb-3">Check me!</mat-checkbox>
+        <mat-checkbox>Check me!</mat-checkbox>
+    </div>
+    <div class="others-wrapper">
+        <mat-form-field floatLabel="never" class="mr-3">
+            <input matInput placeholder="Other">
+        </mat-form-field>
+        <button mat-raised-button>Add</button>
+    </div>
+    <div class="btn-wrapper">
+        <button mat-raised-button class="cancel-btn">Cancel</button>
+        <button mat-raised-button class="save-btn">Save</button>
+    </div>
+</div>

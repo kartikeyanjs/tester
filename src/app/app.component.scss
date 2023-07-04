@@ -1,0 +1,26 @@
+@import "../app/variables";
+
+.table-wrapper {
+    table {
+        width: 100%;
+        box-shadow: none;
+
+        th {
+            padding: 0 16px;
+        }
+
+        td {
+            padding: 10px 16px;
+        }
+
+        .table-icon {
+            color: $textDark;
+
+            .mat-icon {
+                height: 18px;
+                width: 18px;
+                font-size: 18px;
+            }
+        }
+    }
+}

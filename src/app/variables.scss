@@ -1,0 +1,11 @@
+@mixin flexCenter($flexHorizontal, $flexVertical) {
+    display: flex;
+    justify-content: $flexHorizontal;
+    align-items: $flexVertical;
+}
+
+$primaryColor: #4485f5;
+$textDark: #444;
+$textLight: #fff;
+$buttonColor: #d82e32;
+$mutedText: #6c757d;

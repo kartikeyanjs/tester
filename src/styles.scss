@@ -1,0 +1,337 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$people-mover-primary: mat-palette($mat-indigo);
+$people-mover-accent: mat-palette($mat-pink, A200, A100, A400);
+$people-mover-warn: mat-palette($mat-red);
+$people-mover-theme: mat-light-theme($people-mover-primary, $people-mover-accent, $people-mover-warn);
+@include angular-material-theme($people-mover-theme);
+
+@import "./app/variables";
+@import "./app/header";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    color: $textDark;
+}
+
+.ml-1 {
+    margin-left: 0.25em;
+}
+
+.ml-3 {
+    margin-left: 1em;
+}
+
+.mr-1 {
+    margin-right: 0.25em;
+}
+
+.mr-2 {
+    margin-right: 0.5em;
+}
+
+.mr-3 {
+    margin-right: 1em;
+}
+
+.mb-3 {
+    margin-bottom: 1em;
+}
+
+.mt-2 {
+    margin-top: 0.5em;
+}
+
+.p-3 {
+    padding: 1em;
+}
+
+.p-4 {
+    padding: 1.5em;
+}
+
+.pl-1 {
+    padding-left: 0.25em;
+}
+
+.f-16 {
+    font-size: 16px;
+}
+
+.font-weight-normal {
+    font-weight: normal;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: $mutedText;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow: auto;
+}
+
+.primary-btn {
+    background-color: $primaryColor;
+    color: $textLight;
+    padding: 0 0.5em;
+}
+
+.header {
+    .date-picker-wrapper {
+        .mat-form-field-wrapper {
+            padding: 0;
+
+            .mat-form-field-flex {
+                flex-direction: row-reverse;
+
+                .mat-form-field-infix {
+                    padding: 0;
+                    border-top: 0;
+                    width: 65px;
+                }
+
+                .mat-form-field-suffix {
+                    padding-right: 0.5em;
+
+                    .mat-datepicker-toggle-default-icon {
+                        width: 1.5em;
+                    }
+                }
+            }
+
+            .mat-form-field-label,
+            .mat-form-field-underline {
+                display: none;
+            }
+        }
+    }
+
+    .search-bar {
+        .mat-form-field {
+            background: rgb(255, 255, 255, .1);
+            padding: 0.25em 0.5em;
+
+            .mat-form-field-wrapper {
+                padding: 0;
+
+                .mat-form-field-flex {
+                    align-items: center;
+
+                    .mat-form-field-infix {
+                        padding: 0;
+                        border-top: 0;
+                        margin-left: 0.5em;
+
+                        .mat-form-field-label mat-label {
+                            display: none;
+                        }
+                    }
+                }
+
+                .mat-form-field-underline {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .select-wrapper {
+        .mat-form-field-wrapper {
+            padding: 0 0.5em;
+            background: $textLight;
+
+            .mat-form-field-infix {
+                border-top: 0;
+            }
+
+            .mat-form-field-underline {
+                display: none;
+            }
+        }
+    }
+}
+
+.table-wrapper {
+    .mat-paginator {
+
+        .mat-paginator-navigation-first,
+        .mat-paginator-navigation-last {
+            display: none;
+        }
+
+        .mat-paginator-navigation-previous,
+        .mat-paginator-navigation-next {
+            background: #f6f4f6;
+            border-radius: 0;
+            border: 1px solid #eee;
+        }
+    }
+
+    table {
+        .to-autocomplete-wrapper {
+            .mat-form-field-wrapper {
+                padding: 0 0.5em;
+                background: #f6f2f7;
+                border: 1px solid #eee;
+
+                .mat-form-field-infix {
+                    border-top: 0;
+                }
+
+                .mat-form-field-underline {
+                    display: none;
+                }
+            }
+        }
+
+        .ergo-content {
+            display: flex;
+            flex-direction: column;
+
+            .mat-checkbox {
+                .mat-checkbox-layout {
+                    flex-direction: row-reverse;
+
+                    .mat-checkbox-label {
+                        margin-right: 0.5em;
+                    }
+                }
+            }
+        }
+
+        .select-wrapper {
+            .mat-form-field-wrapper {
+                padding: 0 0.5em;
+                background: #f6f2f7;
+                border: 1px solid #eee;
+
+                .mat-form-field-infix {
+                    border-top: 0;
+                }
+
+                .mat-form-field-underline {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.mat-dialog-container.ng-trigger {
+    padding: 1em;
+    width: 510px;
+}
+
+.mat-select-panel-wrap {
+    .mat-select-panel {
+        max-height: initial;
+        overflow: initial;
+
+        .multiselect-header {
+
+            .top-header,
+            .bottom-header {
+                @include flexCenter(initial, center);
+                padding: 0.5em 1em;
+                border-bottom: 1px solid #eee;
+
+                a {
+                    color: $primaryColor;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .multiselect-option-wrapper {
+            max-height: 200px;
+            overflow: auto;
+        }
+
+        .multiselect-footer {
+            padding: 0.75em 1em;
+            border-top: 1px solid #eee;
+        }
+    }
+}
+
+// responsive
+@media only screen and (max-width: 1245px) {
+    .header .sm-mb-2 {
+        margin-bottom: 0.5em;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .header {
+        @include flexCenter(space-between, flex-end);
+
+        .left-section {
+            width: 95%;
+            @include flexCenter(initial, center);
+
+            .search-bar .mat-form-field {
+                width: 150px;
+            }
+
+            .select-wrapper .mat-form-field {
+                width: 150px;
+            }
+
+            .tririga-btn-wrapper button {
+                padding: 0 8px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        .left-section {
+            flex-direction: column;
+            @include flexCenter(initial, flex-start);
+            width: 100%;
+            max-width: 100%;
+
+            .search-bar {
+                width: 100%;
+
+                .mat-form-field {
+                    width: 100%;
+                }
+            }
+
+            .select-wrapper {
+                width: 100%;
+
+                .mat-form-field {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

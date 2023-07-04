@@ -1,0 +1,78 @@
+<div class="header p-3">
+    <div class="left-section">
+      <p class="text-nowrap mr-2 sm-mb-2">PeopleMover > Mobile Move List</p>
+  
+      <!-- calendar -->
+      <div class="date-picker-wrapper mr-2 sm-mb-2">
+        <mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        </mat-form-field>
+      </div>
+  
+      <!-- search input -->
+      <div class="search-bar mr-2 sm-mb-2">
+        <mat-form-field floatLabel="never">
+          <!-- <mat-icon matPix>search</mat-icon> -->
+          <span matPrefix>
+            <mat-icon matPrefix>search</mat-icon>
+          </span>
+          <mat-label>First name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+  
+      <p class="mr-2 text-nowrap sm-mb-2">1/4 Moved</p>
+      <p class="mr-2 text-nowrap sm-mb-2">0 Not Ready</p>
+  
+      <!-- select -->
+      <div class="select-wrapper mr-2 sm-mb-2">
+        <mat-form-field floatLabel="never">
+          <mat-label>Select</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="select-wrapper mr-2 sm-mb-2">
+        <mat-form-field floatLabel="never">
+          <mat-label>Select</mat-label>
+          <mat-select [formControl]="toppings" multiple>
+            <div class="multiselect-header">
+              <div class="top-header">
+                <span class="mr-2 text-muted">View</span>
+                <span class="mr-2">All</span>
+                <a href="javascript:void(0)" class="mr-1">Selected</a>
+                <span class="text-muted">(1)</span>
+              </div>
+              <div class="bottom-header">
+                <a href="javascript:void(0)" class="mr-3">Select All</a>
+                <a href="javascript:void(0)">None</a>
+              </div>
+            </div>
+            <div class="multiselect-option-wrapper">
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </div>
+            <div class="multiselect-footer">
+              <button mat-raised-button class="primary-btn text-uppercase">Apply</button>
+            </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="print-wrapper mr-2 sm-mb-2">
+        <a href="javascript:void(0)">
+          <mat-icon>print</mat-icon>
+          <span class="ml-1">Print</span>
+        </a>
+      </div>
+      <div class="tririga-btn-wrapper mr-3 sm-mb-2">
+        <button mat-raised-button class="text-uppercase">Submit To Tririga</button>
+      </div>
+    </div>
+    <a class="help-icon-wrapper sm-mb-2" href="javascript:void(0)">
+      <mat-icon>help</mat-icon>
+    </a>
+  </div>

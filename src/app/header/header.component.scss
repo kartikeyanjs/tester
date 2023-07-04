@@ -1,0 +1,10 @@
+@import "../../app/variables";
+
+@import "../../app/header";
+.print-wrapper {
+    a {
+        @include flexCenter(initial, center);
+        text-decoration: none;
+        color: $textLight;
+    }
+}
