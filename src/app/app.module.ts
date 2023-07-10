@@ -55,12 +55,14 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { TablePopupComponent } from './table-popup/table-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { MoveListTableComponent } from './move-list-table/move-list-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TablePopupComponent,
-    HeaderComponent
+    HeaderComponent,
+    MoveListTableComponent,
   ],
   entryComponents: [TablePopupComponent],
   imports: [
@@ -80,7 +82,7 @@ import { HeaderComponent } from './header/header.component';
     MatCheckboxModule,
     MatDialogModule,
     MatAutocompleteModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

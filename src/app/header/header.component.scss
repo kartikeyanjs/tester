@@ -1,6 +1,171 @@
 @import "../../app/variables";
 
-@import "../../app/header";
+:host ::ng-deep .header {
+    flex-wrap: wrap;
+    background: $primaryColor;
+    color: $textLight;
+
+    .left-section {
+        line-height: 1;
+        flex-wrap: wrap;
+
+        .date-picker-wrapper {
+            .mat-form-field-wrapper {
+                padding: 0;
+
+                .mat-form-field-flex {
+                    flex-direction: row-reverse;
+
+                    .mat-form-field-infix {
+                        padding: 0;
+                        border-top: 0;
+                        width: 65px;
+                    }
+
+                    .mat-form-field-suffix {
+                        padding-right: 0.5em;
+
+                        .mat-datepicker-toggle-default-icon {
+                            width: 1.5em;
+                        }
+                    }
+                }
+
+                .mat-form-field-label,
+                .mat-form-field-underline {
+                    display: none;
+                }
+            }
+        }
+
+        .search-bar {
+            .mat-form-field {
+                background: rgb(255, 255, 255, .1);
+                padding: 0.25em 0.5em;
+
+                .mat-form-field-wrapper {
+                    padding: 0;
+
+                    .mat-form-field-flex {
+                        align-items: center;
+
+                        .mat-form-field-infix {
+                            padding: 0;
+                            border-top: 0;
+                            margin-left: 0.5em;
+
+                            .mat-form-field-label mat-label {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .mat-form-field-underline {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .select-wrapper {
+            .mat-form-field-wrapper {
+                padding: 0 0.5em;
+                background: $textLight;
+
+                .mat-form-field-infix {
+                    border-top: 0;
+                }
+
+                .mat-form-field-underline {
+                    display: none;
+                }
+            }
+        }
+
+        .tririga-btn-wrapper button {
+            background-color: $buttonColor;
+            color: $textLight;
+            font-weight: normal;
+        }
+    }
+
+    .help-icon-wrapper {
+        mat-icon {
+            color: $textLight;
+        }
+    }
+}
+
+.top-header,
+.bottom-header {
+    @include flexCenter(initial, center);
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #eee;
+
+    a {
+        color: $primaryColor;
+        text-decoration: none;
+    }
+}
+
+.multiselect-option-wrapper {
+    max-height: 200px;
+    overflow: auto;
+}
+
+.multiselect-footer {
+    padding: 0.75em 1em;
+    border-top: 1px solid #eee;
+}
+
+// responsive
+@media only screen and (max-width: 1245px) {
+    .header .sm-mb-2 {
+        margin-bottom: 0.5em;
+    }
+}
+@media only screen and (min-width: 601px) {
+    .header {
+        @include flexCenter(space-between, flex-end);
+        .left-section {
+            width: 95%;
+            @include flexCenter(initial, center);
+            .search-bar .mat-form-field {
+                width: 150px;
+            }
+            .select-wrapper .mat-form-field {
+                width: 150px;
+            }
+            .tririga-btn-wrapper button {
+                padding: 0 8px;
+            }
+        }
+    }
+}
+// why do we need this?
+@media only screen and (max-width: 600px) {
+    .header {
+        .left-section {
+            flex-direction: column;
+            @include flexCenter(initial, flex-start);
+            width: 100%;
+            max-width: 100%;
+            .search-bar {
+                width: 100%;
+                .mat-form-field {
+                    width: 100%;
+                }
+            }
+            .select-wrapper {
+                width: 100%;
+                .mat-form-field {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
 .print-wrapper {
     a {
         @include flexCenter(initial, center);
@@ -8,3 +173,4 @@
         color: $textLight;
     }
 }
+

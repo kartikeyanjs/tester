@@ -1,0 +1,82 @@
+@import "../../app/variables";
+
+:host {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+    padding: 0 0.5em;
+    background: #f6f2f7;
+    border: 1px solid #eee;
+}
+:host ::ng-deep .mat-form-field-infix {
+    border-top: 0;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow: auto;
+}
+:host ::ng-deep .mat-paginator {
+
+    .mat-paginator-navigation-first,
+    .mat-paginator-navigation-last {
+        display: none;
+    }
+
+    .mat-paginator-navigation-previous,
+    .mat-paginator-navigation-next {
+        background: #f6f4f6;
+        border-radius: 0;
+        border: 1px solid #eee;
+    }
+}
+
+
+.table-wrapper {
+    table {
+        width: 100%;
+        box-shadow: none;
+
+        th {
+            padding: 0 16px;
+        }
+
+        td {
+            padding: 10px 16px;
+        }
+
+        .table-icon {
+            color: $textDark;
+
+            .mat-icon {
+                height: 18px;
+                width: 18px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.ergo-content {
+    display: flex;
+    flex-direction: column;
+
+    .mat-checkbox {
+        .mat-checkbox-layout {
+            flex-direction: row-reverse;
+
+            .mat-checkbox-label {
+                margin-right: 0.5em;
+            }
+        }
+    }
+}

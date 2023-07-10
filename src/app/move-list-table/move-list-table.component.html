@@ -1,0 +1,98 @@
+<div class="table-wrapper p-4">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  
+        <ng-container matColumnDef="movee">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap">Movee / Asset</th>
+          <td mat-cell *matCellDef="let element">Lorem ipsum dolor sit.</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>From</th>
+          <td mat-cell *matCellDef="let element">Lorem ipsum dolor sit.</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>To</th>
+          <td mat-cell *matCellDef="let element">
+            <a href="javascript:void(0)" class="table-icon" (click)="toForm()"><mat-icon>edit</mat-icon></a>
+            <form class="to-autocomplete-wrapper mt-2" *ngIf="showToForm">
+              <mat-form-field floatLabel="never">
+                <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+                  [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="ergo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Ergo</th>
+          <td mat-cell *matCellDef="let element" class="ergo-content">
+            <mat-checkbox>Check me!</mat-checkbox>
+            <mat-checkbox>Check me!</mat-checkbox>
+            <a href="javascript:void(0)" class="table-icon" (click)="openDialog()"><mat-icon>edit</mat-icon></a>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="coordinator">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Coordinator</th>
+          <td mat-cell *matCellDef="let element">Lorem ipsum dolor sit.</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="select-wrapper">
+              <mat-form-field floatLabel="never">
+                <mat-label>Select</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="select-wrapper">
+              <mat-form-field floatLabel="never">
+                <mat-label>Select</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="comments">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Comments</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button>Comments...</button>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+            <a href="javascript:void(0)" class="table-icon"><mat-icon>delete</mat-icon></a>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
