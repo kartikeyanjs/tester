@@ -1,97 +1,99 @@
 @import "../../app/variables";
 
-:host ::ng-deep .header {
-    flex-wrap: wrap;
-    background: $primaryColor;
-    color: $textLight;
-
-    .left-section {
-        line-height: 1;
+:host ::ng-deep {
+    .header {
         flex-wrap: wrap;
-
-        .date-picker-wrapper {
-            .mat-form-field-wrapper {
-                padding: 0;
-
-                .mat-form-field-flex {
-                    flex-direction: row-reverse;
-
-                    .mat-form-field-infix {
-                        padding: 0;
-                        border-top: 0;
-                        width: 65px;
-                    }
-
-                    .mat-form-field-suffix {
-                        padding-right: 0.5em;
-
-                        .mat-datepicker-toggle-default-icon {
-                            width: 1.5em;
-                        }
-                    }
-                }
-
-                .mat-form-field-label,
-                .mat-form-field-underline {
-                    display: none;
-                }
-            }
-        }
-
-        .search-bar {
-            .mat-form-field {
-                background: rgb(255, 255, 255, .1);
-                padding: 0.25em 0.5em;
-
+        background: $primaryColor;
+        color: $textLight;
+    
+        .left-section {
+            line-height: 1;
+            flex-wrap: wrap;
+    
+            .date-picker-wrapper {
                 .mat-form-field-wrapper {
                     padding: 0;
-
+    
                     .mat-form-field-flex {
-                        align-items: center;
-
+                        flex-direction: row-reverse;
+    
                         .mat-form-field-infix {
                             padding: 0;
                             border-top: 0;
-                            margin-left: 0.5em;
-
-                            .mat-form-field-label mat-label {
-                                display: none;
+                            width: 65px;
+                        }
+    
+                        .mat-form-field-suffix {
+                            padding-right: 0.5em;
+    
+                            .mat-datepicker-toggle-default-icon {
+                                width: 1.5em;
                             }
                         }
                     }
-
+    
+                    .mat-form-field-label,
                     .mat-form-field-underline {
                         display: none;
                     }
                 }
             }
-        }
-
-        .select-wrapper {
-            .mat-form-field-wrapper {
-                padding: 0 0.5em;
-                background: $textLight;
-
-                .mat-form-field-infix {
-                    border-top: 0;
-                }
-
-                .mat-form-field-underline {
-                    display: none;
+    
+            .search-bar {
+                .mat-form-field {
+                    background: rgb(255, 255, 255, .1);
+                    padding: 0.25em 0.5em;
+    
+                    .mat-form-field-wrapper {
+                        padding: 0;
+    
+                        .mat-form-field-flex {
+                            align-items: center;
+    
+                            .mat-form-field-infix {
+                                padding: 0;
+                                border-top: 0;
+                                margin-left: 0.5em;
+    
+                                .mat-form-field-label mat-label {
+                                    display: none;
+                                }
+                            }
+                        }
+    
+                        .mat-form-field-underline {
+                            display: none;
+                        }
+                    }
                 }
             }
+    
+            .select-wrapper {
+                .mat-form-field-wrapper {
+                    padding: 0 0.5em;
+                    background: $textLight;
+    
+                    .mat-form-field-infix {
+                        border-top: 0;
+                    }
+    
+                    .mat-form-field-underline {
+                        display: none;
+                    }
+                }
+            }
+    
+            .tririga-btn-wrapper button {
+                background-color: $buttonColor;
+                color: $textLight;
+                font-weight: normal;
+            }
         }
-
-        .tririga-btn-wrapper button {
-            background-color: $buttonColor;
-            color: $textLight;
-            font-weight: normal;
-        }
-    }
-
-    .help-icon-wrapper {
-        mat-icon {
-            color: $textLight;
+    
+        .help-icon-wrapper {
+            mat-icon {
+                color: $textLight;
+            }
         }
     }
 }
